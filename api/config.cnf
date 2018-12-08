@@ -1,0 +1,7 @@
+[AUTH0_CONF]
+AUTH0_ISSUER=https://how2makessowork.auth0.com/
+AUTH0_CUST_FIELD_URI=https://how2makesso.work/
+AUTH0_API_ID=https://oauth.how2makesso.work/
+AUTH0_JWKS_JSON=https://how2makessowork.auth0.com/.well-known/JWKS.json
+AUTH0_JWT_ALG=['RS256','HS256']
+AUTH0_SQLALCHEMY_DIR=/opt/projects/python/api
