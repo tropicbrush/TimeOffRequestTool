@@ -1,7 +1,7 @@
 function (user, context, callback) {
   // TODO: implement your rule
   // 
-if (context.clientID === 'lnRKX3VDp6qZwRbTCsmR1p5oMkzSw5ke')
+if (context.clientID === '##########')
   {
 var request = require("request");
 let role = '';
@@ -9,14 +9,14 @@ let access_token = '';
 let nickname = user.nickname;  
   
 var options1 = { method: 'POST',
-  url: 'https://how2makessowork.auth0.com/oauth/token',
+  url: 'https://YOUR_AUth0_Tenant/oauth/token',
   headers:
    { 'cache-control': 'no-cache',
      'Content-Type': 'application/json' },
   body:
-   { client_id: 'ZW40hrt8o1jnKFZes5c4FeR0uhaUhly3',
-     client_secret: 'kvK92GvmtMvpXiCiK2FZIN8Sg5xLDR3EHX_t1QxkVv75Vyw8dWHGwxoubeTibfS4',
-     audience: 'https://oauth.how2makesso.work/',
+   { client_id: '############',
+     client_secret: '########################',
+     audience: 'http://localhost:8081/',
      grant_type: 'client_credentials' },
   json: true };
 
