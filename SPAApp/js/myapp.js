@@ -34,7 +34,7 @@ window.addEventListener('load', function() {
           };
 
           let access_token = sessionStorage.getItem('access_token');
-          xhttp.open("POST", AUTH0_AUDIENCE+"api/v1.0/getMyLeaves", true);
+          xhttp.open("POST", AUTH0_AUDIENCE+"/api/v1.0/getMyLeaves", true);
           xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
           xhttp.send('access_token=' + access_token);
         }
@@ -52,7 +52,7 @@ $(document).ready(function () {
                      });
 if(data[0] != null)
 {
-var url = AUTH0_AUDIENCE+"api/v1.0/cancelRequest";
+var url = AUTH0_AUDIENCE+"/api/v1.0/cancelRequest";
 let access_token = sessionStorage.getItem('access_token');
       var posting = $.post( url, { req_id:data[0], access_token:access_token } );
 
@@ -100,7 +100,7 @@ $(document).ready(function () {
 
 if(data[0] != null)
 {
-var url = AUTH0_AUDIENCE+"api/v1.0/updateLeaveRequest";
+var url = AUTH0_AUDIENCE+"/api/v1.0/updateLeaveRequest";
 let access_token = sessionStorage.getItem('access_token');
       var posting = $.post( url, { req_id:data[0], startdt: data[2], enddt: data[3],comments: data[5], access_token:access_token } );
 
@@ -191,7 +191,7 @@ function allRequests() {
           };
 
           let access_token = sessionStorage.getItem('access_token');
-          xhttp.open("POST", AUTH0_AUDIENCE+"api/v1.0/getAllLeaves", true);
+          xhttp.open("POST", AUTH0_AUDIENCE+"/api/v1.0/getAllLeaves", true);
           xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
           xhttp.send('access_token=' + access_token);
         }
@@ -210,7 +210,7 @@ $(document).ready(function () {
 
 if(data[0] != null)
 {
-var url = AUTH0_AUDIENCE+"api/v1.0/approveRequest";
+var url = AUTH0_AUDIENCE+"/api/v1.0/approveRequest";
 let access_token = sessionStorage.getItem('access_token');
       var posting = $.post( url, { req_id:data[0], access_token:access_token } );
 
@@ -247,7 +247,7 @@ $(document).ready(function () {
 
 if(data[0] != null)
 {
-var url = AUTH0_AUDIENCE+"api/v1.0/cancelRequest";
+var url = AUTH0_AUDIENCE+"/api/v1.0/cancelRequest";
 let access_token = sessionStorage.getItem('access_token');
       var posting = $.post( url, { req_id:data[0], access_token:access_token } );
 
@@ -303,7 +303,7 @@ function getDRReq() {
           };
 
           let access_token = sessionStorage.getItem('access_token');
-          xhttp.open("POST", AUTH0_AUDIENCE+"api/v1.0/getDRLeaves", true);
+          xhttp.open("POST", AUTH0_AUDIENCE+"/api/v1.0/getDRLeaves", true);
           xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
           xhttp.send('access_token=' + access_token);
         }
@@ -324,7 +324,7 @@ $(document).ready(function () {
 
 if(data[0] != null)
 {
-var url = AUTH0_AUDIENCE+"api/v1.0/approveRequest";
+var url = AUTH0_AUDIENCE+"/api/v1.0/approveRequest";
 let access_token = sessionStorage.getItem('access_token');
       var posting = $.post( url, { req_id:data[0], access_token:access_token } );
 
@@ -360,7 +360,7 @@ $(document).ready(function () {
 
 if(data[0] != null)
 {
-var url = AUTH0_AUDIENCE+"api/v1.0/rejectRequest";
+var url = AUTH0_AUDIENCE+"/api/v1.0/rejectRequest";
 let access_token = sessionStorage.getItem('access_token');
       var posting = $.post( url, { req_id:data[0], access_token:access_token } );
 
@@ -406,7 +406,7 @@ $(document).ready(function () {
 
 if(data[0] != null)
 {
-var url = AUTH0_AUDIENCE+"api/v1.0/updateLeaveRequest";
+var url = AUTH0_AUDIENCE+"/api/v1.0/updateLeaveRequest";
 let access_token = sessionStorage.getItem('access_token');
       var posting = $.post( url, { req_id:data[0], startdt: data[2], enddt: data[3],comments: data[5], access_token:access_token } );
 
