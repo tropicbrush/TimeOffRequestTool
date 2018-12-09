@@ -1,6 +1,6 @@
 function (user, context, callback) {
   // TODO: implement your rule
-if (context.clientID === 'lnRKX3VDp6qZwRbTCsmR1p5oMkzSw5ke')
+if (context.clientID === 'client_id')
   {
   
   if (user.app_metadata.title === 'EndUser') {
