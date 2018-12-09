@@ -40,6 +40,9 @@ pip install -r requirements.txt
      + Fetch User Title and Status : FetchUserTitleAndStatus.js
      + Add username and Title to ID token : UpdateIDTokenWithUserDetails.js
      + Grant Scope Access On Title : grantAuthScope.js
+
++ Create below hook from the files in Auth0 config folder.
+
      + TimeOffTool Hook For User Registration : userRegistrationHook.js
 
 ### Setup on Apache and Python
