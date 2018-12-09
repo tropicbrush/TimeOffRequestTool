@@ -31,18 +31,7 @@ jwks_url = config.get('AUTH0_CONF', 'AUTH0_JWKS_JSON')
 cust_field_uri = config.get('AUTH0_CONF', 'AUTH0_CUST_FIELD_URI')
 
 
-
-
-#app.config.from_pyfile('config.cfg')
-
-#db_path= app.config['AUTH0_SQLALCHEMY_DIR']
-#oauth_audience = app.config['AUTH0_API_ID']
-#oauth_issuer = app.config['AUTH0_ISSUER']
-#jwt_alg = app.config['AUTH0_JWT_ALG']
-#jwks_url = app.config['AUTH0_JWKS_JSON']
-#cust_field_uri=app.config['AUTH0_CUST_FIELD_URI']
-
-
+cors = CORS(app, resources={r"/api/*": {"origins": "*"}})
 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(db_path,'Auth0Api.db')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS']='False'
@@ -265,7 +254,7 @@ def get_userRole():
     print username
     if access_token:
      verify = json.loads(auth0_verify_access_token_ClientCred(access_token))
-     if (verify['verified'] == 'yes'):
+     if (verify['verified'] == 'yes' and ('TimeOffTool.readUser' in verify['scopes'] )):
 	result = User.query.with_entities(User.title,User.status).filter_by(username=username).first()
         if result:
 		print result
@@ -284,7 +273,7 @@ def registerUser():
     if access_token:
      verify = json.loads(auth0_verify_access_token_ClientCred(access_token))
      print verify
-     if (verify['verified'] == 'yes'):
+     if (verify['verified'] == 'yes' and ('TimeOffTool.registerUser' in verify['scopes'] )):
 	 print "inside"
          username = request.form['username']
          print username
@@ -319,7 +308,7 @@ def auth0_verify_access_token_ClientCred(access_token):
          token_json = jwt.decode(token, keys, algorithms=jwt_alg,audience=oauth_audience,issuer=oauth_issuer)
          if (token_json):
                 print "test2"
-                return json.dumps({"verified": "yes"})
+                return json.dumps({"verified": "yes",'scopes':token_json["scope"]})
          return json.dumps({"verified": 'false'})
         except jwt.ExpiredSignatureError:
             return json.dumps({'Error':'Signature expired. Please log in again.'})
