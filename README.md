@@ -33,7 +33,10 @@ pip install -r requirements.txt
 + Create a custom API - ```Time Off Tool (API)``` with identifier as ```http://localhost:8081``` and define properties:
 
     Scopes : ```TimeOffTool.me.read``` ```TimeOffTool.DR.read``` ```TimeOffTool.HR.admin``` ```TimeOffTool.me.write```
- ```TimeOffTool.DR.approve```
+ ```TimeOffTool.DR.approve``` ```TimeOffTool.readUser``` ```TimeOffTool.registerUser```
+ 
++ Create a application - ```Time Off Tool(Service)``` of type ```Machine to Machine App``` and allow access to the ```Time Off Tool (API)``` with scopes ```TimeOffTool.readUser``` ```TimeOffTool.registerUser```. This app will be used in the ```Hook``` and ```Rule``` configuration. 
+
 
 + Create below rules from the files in Auth0 config folder in the order mentioned.
 
