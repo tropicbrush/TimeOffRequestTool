@@ -40,6 +40,7 @@ pip install -r requirements.txt
      + Fetch User Title and Status : FetchUserTitleAndStatus.js
      + Add username and Title to ID token : UpdateIDTokenWithUserDetails.js
      + Grant Scope Access On Title : grantAuthScope.js
+     + TimeOffTool Hook For User Registration : userRegistrationHook.js
 
 ### Setup on Apache and Python
 
