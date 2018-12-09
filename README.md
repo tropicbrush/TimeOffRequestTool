@@ -1,4 +1,4 @@
-## The Time-Off Request Tool
+# The Time-Off Request Tool
 The Time-Off Request tool is a Single Page Application (SPA) which can be used for Time-Off request management.
 
 The application allows user to perform certain actions determined by user's job title as below:
