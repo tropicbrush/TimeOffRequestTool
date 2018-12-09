@@ -13,8 +13,8 @@ module.exports = function (user, context, cb) {
    { 'cache-control': 'no-cache',
      'Content-Type': 'application/json' },
   body:
-   { client_id: 'ZW40hrt8o1jnKFZes5c4FeR0uhaUhly3',
-     client_secret: 'kvK92GvmtMvpXiCiK2FZIN8Sg5xLDR3EHX_t1QxkVv75Vyw8dWHGwxoubeTibfS4',
+   { client_id: 'YOUR_CLIENT_ID',
+     client_secret: '##################################',
      audience: 'https://oauth.how2makesso.work/',
      grant_type: 'client_credentials' },
   json: true };
@@ -27,7 +27,7 @@ module.exports = function (user, context, cb) {
  //  user.user_metadata.title = 'role23';
    
   var options2 = { method: 'POST',
-  url: 'https://oauth.how2makesso.work/api/v1.0/registerUser',
+  url: 'http://localhost:8081/api/v1.0/registerUser',
   headers: { 'cache-control': 'no-cache' },rejectUnauthorized:false,
   form:
    { access_token: access_token,
