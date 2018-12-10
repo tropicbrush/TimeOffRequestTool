@@ -31,7 +31,7 @@ jwks_url = config.get('AUTH0_CONF', 'AUTH0_JWKS_JSON')
 cust_field_uri = config.get('AUTH0_CONF', 'AUTH0_CUST_FIELD_URI')
 
 
-cors = CORS(app, resources={r"/api/*": {"origins": "*"}})
+cors = CORS(app, resources={r"/api/*": {"origins":  ["http://localhost"]}})
 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(db_path,'Auth0Api.db')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS']='False'
